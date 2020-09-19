@@ -9,7 +9,7 @@ import AppText from './app/components/AppText';
 export default function App() {
   return (
     <View style={styles.container}>
-      <AppText txt="hello" />
+      <AppText txt="hello world" />
     </View>
   );
 }

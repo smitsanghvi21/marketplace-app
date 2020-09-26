@@ -20,6 +20,7 @@ export default function Welcome() {
       <View style={styles.logoContainer}>
         <Image style={styles.logo} source={require("../assets/logo-red.png")} />
         <Text style={styles.text}>Sellify</Text>
+        <Text style={styles.subText}>Sell Instantly</Text>
       </View>
       <View style={styles.buttonContainer}>
         <ReusableButton style={{ alignItems: "center" }} class="primary" name="Login" />
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   buttonContainer: {
-    width: 290
+    // width: 290
   },
   logoContainer: {
     position: "absolute",
@@ -51,4 +52,8 @@ const styles = StyleSheet.create({
     color: "red",
     fontSize: 36,
   },
+  subText: {
+    color: "green",
+    fontSize: 18
+  }
 });

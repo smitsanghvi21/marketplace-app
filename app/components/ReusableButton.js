@@ -19,11 +19,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    width: "100%",
   },
   primary: {
     backgroundColor: "#f55442",
     height: 70,
+    width: 340,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 25,

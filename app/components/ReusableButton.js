@@ -6,11 +6,12 @@ export default function ReusableButton(props) {
     console.log("button clicked");
   };
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={handleButtonClick} style={(props.class==='primary')?styles.primary:styles.secondary}>
+    <TouchableOpacity onPress={handleButtonClick} style={(props.class === 'primary') ? styles.primary : styles.secondary}>
+      <View style={styles.container}>
         <Text style={styles.text}>{props.name}</Text>
-      </TouchableOpacity>
-    </View>
+      </View>
+    </TouchableOpacity>
+
   );
 }
 
@@ -21,18 +22,20 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   primary: {
-    backgroundColor: "red",
+    backgroundColor: "#f55442",
     height: 70,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 25,
+    margin: 5
   },
-  secondary:{
-    backgroundColor: "green",
+  secondary: {
+    backgroundColor: "#21bf73",
     height: 70,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 25,
+    margin: 5
   },
   text: {
     fontSize: 24,

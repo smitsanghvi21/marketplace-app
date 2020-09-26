@@ -12,7 +12,11 @@ export default function AppText(props) {
 const styles = StyleSheet.create({
     textStyle: {
         fontSize: 18,
-        fontFamily: Platform.OS === 'android' ? "Roboto" : "Avenir",
-        color: 'red'
+        color: 'red',
+        ...Platform.select({
+            fontFamily: Platform.OS === 'android' ? "Avenir" : "Roboto"
+        })
+
+
     }
 })

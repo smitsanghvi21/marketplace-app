@@ -13,6 +13,7 @@ import ReusableButton from "../components/ReusableButton";
 export default function Welcome() {
   return (
     <ImageBackground
+      blurRadius={10}
       source={require("../assets/background.jpg")}
       style={styles.backgroundImage}
     >
@@ -20,13 +21,10 @@ export default function Welcome() {
         <Image style={styles.logo} source={require("../assets/logo-red.png")} />
         <Text style={styles.text}>Sellify</Text>
       </View>
-      <View style={styles.loginView}>
-        <ReusableButton class="primary" name="Login" />
-      </View>
-      <View style={styles.registerView}>
+      <View style={styles.buttonContainer}>
+        <ReusableButton style={{ alignItems: "center" }} class="primary" name="Login" />
         <ReusableButton class="secondary" name="Register" />
       </View>
-      <View style={styles.registerButton} />
     </ImageBackground>
   );
 }
@@ -37,9 +35,13 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "center",
   },
+  buttonContainer: {
+    width: 290
+  },
   logoContainer: {
     position: "absolute",
-    top: 60,
+    top: 70,
+    alignItems: "center"
   },
   logo: {
     height: 100,
@@ -48,15 +50,5 @@ const styles = StyleSheet.create({
   text: {
     color: "red",
     fontSize: 36,
-  },
-  loginButton: {
-    width: "100%",
-    backgroundColor: "blue",
-    height: 70,
-  },
-  registerButton: {
-    width: "100%",
-    backgroundColor: "red",
-    height: 70,
   },
 });

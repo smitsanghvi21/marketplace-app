@@ -48,6 +48,7 @@ export default function Message () {
             name={item.title}
             description={item.description}
             image={item.image}
+            onPress={() => console.log('touched', item)}
           />
         )}
         ItemSeparatorComponent={ListItemSeparator}

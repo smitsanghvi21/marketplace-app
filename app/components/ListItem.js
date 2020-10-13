@@ -1,23 +1,29 @@
 import React from 'react'
-import { View, Text, StyleSheet, Image } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableHighlight } from 'react-native'
 
 export default function ListItem (props) {
-  const { image, name, description, total } = props
+  const { image, name, description, total, onPress } = props
   return (
-    <View style={styles.container}>
-      <Image style={styles.image} source={image} />
-      <View style={styles.accountContainer}>
-        <Text style={styles.name}>{name}</Text>
-        <Text style={styles.total}>{description}</Text>
+    <TouchableHighlight
+      activeOpacity={0.6}
+      underlayColor='#DDDDDD'
+      onPress={onPress}
+    >
+      <View style={styles.container}>
+        <Image style={styles.image} source={image} />
+        <View style={styles.accountContainer}>
+          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.total}>{description}</Text>
+        </View>
       </View>
-    </View>
+    </TouchableHighlight>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    padding:10
+    padding: 10
   },
   image: {
     width: 70,

@@ -11,28 +11,29 @@ import {
 
 import ListItem from '../components/ListItem'
 import ListItemSeparator from '../components/ListItemSeparator'
+import DeleteSwipe from '../components/DeleteSwipe'
 const messages = [
   {
     id: 1,
-    title: 'T1',
+    name: 'T1',
     description: 'D2',
     image: require('../assets/mosh.jpg')
   },
   {
     id: 2,
-    title: 'T2',
+    name: 'T2',
     description: 'D2',
     image: require('../assets/mosh.jpg')
   },
   {
     id: 3,
-    title: 'T3',
+    name: 'T3',
     description: 'D3',
     image: require('../assets/mosh.jpg')
   },
   {
     id: 4,
-    title: 'T4',
+    name: 'T4',
     description: 'D4',
     image: require('../assets/mosh.jpg')
   }
@@ -45,10 +46,11 @@ export default function Message () {
         keyExtractor={messages => messages.id.toString()}
         renderItem={({ item }) => (
           <ListItem
-            name={item.title}
+            name={item.name}
             description={item.description}
             image={item.image}
             onPress={() => console.log('touched', item)}
+            renderRightActions={DeleteSwipe}
           />
         )}
         ItemSeparatorComponent={ListItemSeparator}

@@ -1,9 +1,9 @@
-import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import React from 'react'
+import { View, Text, StyleSheet, Image } from 'react-native'
 
-import AppText from "./AppText";
-export default function Card(props) {
-  const { title, price, image } = props;
+import AppText from './AppText'
+export default function Card (props) {
+  const { title, price, image } = props
 
   return (
     <View style={styles.card}>
@@ -13,30 +13,30 @@ export default function Card(props) {
         <Text style={styles.price}>{price}</Text>
       </View>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   card: {
     borderRadius: 15,
-    backgroundColor: "white",
+    backgroundColor: 'white',
     marginBottom: 20,
-    overflow: "hidden",
+    overflow: 'hidden'
   },
   detailsContainer: {
-    padding: 20,
+    padding: 20
   },
   title: {
-    color: "black",
-    fontSize: 16,
+    color: 'black',
+    fontSize: 16
   },
   price: {
-    color: "green",
-    fontWeight: "bold",
-    fontSize: 14,
+    color: 'green',
+    fontWeight: 'bold',
+    fontSize: 14
   },
   image: {
-    width: "100%",
-    height: 200,
-  },
-});
+    width: '100%',
+    height: 200
+  }
+})

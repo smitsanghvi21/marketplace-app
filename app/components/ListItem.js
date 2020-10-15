@@ -1,22 +1,28 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image, TouchableHighlight } from 'react-native'
+import Swipeable from 'react-native-gesture-handler/Swipeable'
 
+import DeleteSwipe from './DeleteSwipe';
 export default function ListItem (props) {
-  const { image, name, description, total, onPress } = props
+  const { image, name, description, total, onPress, renderRightActions } = props;
   return (
-    <TouchableHighlight
-      activeOpacity={0.6}
-      underlayColor='#DDDDDD'
-      onPress={onPress}
+    <Swipeable
+      renderRightActions={renderRightActions}
     >
-      <View style={styles.container}>
-        <Image style={styles.image} source={image} />
-        <View style={styles.accountContainer}>
-          <Text style={styles.name}>{name}</Text>
-          <Text style={styles.total}>{description}</Text>
+      <TouchableHighlight
+        activeOpacity={0.6}
+        underlayColor='#DDDDDD'
+        onPress={onPress}
+      >
+        <View style={styles.container}>
+          <Image style={styles.image} source={image} />
+          <View style={styles.accountContainer}>
+            <Text style={styles.name}>{name}</Text>
+            <Text style={styles.total}>{description}</Text>
+          </View>
         </View>
-      </View>
-    </TouchableHighlight>
+      </TouchableHighlight>
+    </Swipeable>
   )
 }
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   View,
   Text,
@@ -6,7 +6,8 @@ import {
   FlatList,
   SafeAreaView,
   StatusBar,
-  ItemSeparatorComponent
+  ItemSeparatorComponent,
+  Platform
 } from 'react-native'
 
 import ListItem from '../components/ListItem'
@@ -39,6 +40,13 @@ const messages = [
   }
 ]
 export default function Message () {
+  const [messages, setMessage] = useState(messages)
+
+  const handleDelete = messages => {
+    const newMessages = messages.filter(m => m.id != messages.id)
+    setMessage(newMessages)
+  }
+
   return (
     <SafeAreaView style={styles.screen}>
       <FlatList
@@ -50,7 +58,9 @@ export default function Message () {
             description={item.description}
             image={item.image}
             onPress={() => console.log('touched', item)}
-            renderRightActions={DeleteSwipe}
+            renderRightActions={() => (
+              <DeleteSwipe onPress={() => handleDelete(item)} />
+            )}
           />
         )}
         ItemSeparatorComponent={ListItemSeparator}
